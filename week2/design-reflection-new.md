@@ -1,5 +1,5 @@
 #
-![Alt text](week2/imgs/mytestsite 1.0.jpg)
+![Alt text](imgs/mytestsite 1.0.jpg)
 
 ##
 
