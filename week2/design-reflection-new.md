@@ -1,7 +1,6 @@
-#
-![Alt text](mytestsite1.0.jpg)
 
-##
+![Alt text](mytestsite.jpg)
+
 
 What are the 6 Phases of Web Design?
 
