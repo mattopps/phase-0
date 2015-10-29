@@ -1,5 +1,5 @@
 #
-![Alt text](imgs/mytestsite1.0.jpg)
+![Alt text](mytestsite1.0.jpg)
 
 ##
 
