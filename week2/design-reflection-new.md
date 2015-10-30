@@ -1,5 +1,5 @@
 
-![Sitemap](mytestsite.jpg)
+![Sitemap](imgs/Sitemap.jpg)
 
 
 What are the 6 Phases of Web Design?
