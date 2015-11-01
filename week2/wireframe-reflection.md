@@ -23,5 +23,5 @@ Q: Which parts of the challenge did you enjoy and which parts did you find tedio
 A: I tried a few different wireframe creation site's from the recommended list. didn't like any of them. reading about ux design was pretty cool.
 
 
-![wireframe index](Wireframe_Index.JPG)
-![blog index wireframe](Blog_Index_Wireframe.JPG)
+![wireframe index](imgs/Wireframe_Index.JPG)
+![blog index wireframe](imgs/Blog_Index_Wireframe.JPG)
