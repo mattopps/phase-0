@@ -1,4 +1,87 @@
-html {
-  background-color: red;
+b{font-size: 4em
 }
+
+#header{text-align: center;
+border-bottom: solid;
+}
+
+#name{font-size: 1.35em}
+
+span{font-size: .6em;}
+
+#addressline1{font-size: .66em} 
+
+#addressline2{font-size: .66em}
+
+#Homepage{font-size: .9em}
+
+table{ border:"0"; cellspacing:"0"; width:"90%"}
+  }
+    td{ height:"45"; valign:"top"; width="50%"}
+      }
+      
+
+
+
+table, tbody, tr, td{border-collapse: collapse;
+  border-color: white;
+  border-style: none;
+  border: none;}
+
+a{color:purple;}
+a:hover{color:green;}
+a:visited{color:red;}
+
+body{color:navy;}
+
+li{font-size: .9em;
+color:blue;}
+
+ul{padding-bottom: 20px;
+  border-bottom: solid;}
+
+#geico-ad{padding-bottom: 20px;
+          border-bottom: solid;
+          text-align: center;
+          font-size: .7em}
+
+#comments-concerns{padding-bottom: 20px;
+          border-bottom: solid;
+          font-size: .8em}
+
+#legal{font-size:1.2em}
+
+#copyright-info{font-size: .6em;
+padding-bottom:25px;}
+
+
+/*
+
+Q: What is important to know when linking an external file (like a stylesheet) to an HTML file?
+
+A: The name of the file. The link goes in the head of the html file above the title and includes three elements. two standard ("text/css" "stylesheet")and one relative(the name of the file to link") ;
+
+Q: What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+
+A: Table is a trick. Seems like every resource I read online indicated not to use a table for something like this. Two wasted hours later when I finally checked the source code I saw that the site uses a table. Go figure
+  But I still haven't gotten it the way I want it. the table is a bit off and each cell has borders even though I would like them to disappear.;
+
+Q: What CSS did you use to modify the element style (like size, color, etc.)
+
+A: font-size, color, padding, borders, ;
+
+Q: Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+
+A: YES. Both. And I switched back and forth several times because when I would open the file in devtools my code changes weren't actually loaded. So I just assumed that my code didn't work. Based on the hierarchy of overriding in the video intro to CSS I thought I could have both classes and ids. Eventually I just made everything an id to be as specific as possible. almost definitely unnecessary and because of chrome dev tools not displaying the code I thought I had.Also a good reminder to add and commit each change. I did not. ;
+
+Q: When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+
+A: Probably not the berkshire site for the most part. For one thing It was probably written long ago and not updated for the current best practice of using CSS. It was styled directly. Also it used a table for non tabular data.;
+
+
+
+
+
+
+*/
 
