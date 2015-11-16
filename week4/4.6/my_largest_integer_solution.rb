@@ -12,7 +12,7 @@ def largest_integer(array)
    i = 0
    i2 = i + 1
    test = array[i]
-   largest = []
+
 
   
     array.each do |num|
@@ -21,6 +21,6 @@ def largest_integer(array)
      end
      end
      
-     largest.push(test)
-     largest[0]
+     test
+     
    end

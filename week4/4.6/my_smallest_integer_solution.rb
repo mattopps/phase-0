@@ -39,7 +39,7 @@ def smallest_integer(array)
    i = 0
    i2 = i + 1
    test = array[i]
-   smallest = []
+  
 
    array.each do |num|
 
@@ -48,7 +48,7 @@ def smallest_integer(array)
     end
   end
   
-    smallest.push(test)
-    smallest[0]
+    test
+    
   end
 
