@@ -48,7 +48,7 @@ Output - An array of strings and numbers sorted by size/alphabetical order
 1 create a method
 2 The method should take an array as an argument
 3 the array should check the contents of the list
-4 if there are only strings or only intigers it should return the array   sorted
+4 if there are only strings or only intigers it should return the array,  sorted
 5 if there are both strings and intigers 
   the method should create a new array
     the method should test each item and if it is an intiger it   should remove it from the original array 
@@ -66,14 +66,13 @@ Method 2 - Sort hash
 3 Create an empty array
 4 the method should separate each pair of key values into an array
 5 the method should populate each pair array into the newly created empty array
-6 the new array should be sorted by the value of the each pair 
-7
+6 the new array should be sorted by the value of each pair 
 
 
 =end
 
-# Person 3
-def my_array_sorting_method(source)
+# Person 3 Initial Solution
+#def my_array_sorting_method(source)
   # num_array = []
   # string_array= []
   # sort_array = []
@@ -83,7 +82,11 @@ def my_array_sorting_method(source)
   
   # sort_array = num_array.sort
   # sort_array.concat(string_array.sort)
-  
+  #end  
+
+#Refactor
+
+def my_array_sorting_method(source)
 
   sort_array = []
   string_array= []
@@ -94,7 +97,7 @@ def my_array_sorting_method(source)
   sort_array.sort!.concat(string_array.sort)
 end
 
-#refactoring might use .dup
+#refactoring even further might use .dup
 
 def my_hash_sorting_method(source)
   source.sort {|k,v| k[1]<=>v[1]}
@@ -104,8 +107,10 @@ end
 
 
 # Identify and describe the Ruby method(s) you implemented.
+# The array method was pretty tricky to start with because sort won't work on a mix of strings and intigers. I tried a few different failed approaches. Leaving sort, and the Array docs behind I switched to the class object docs. Using the Integer docs I tried to see if I could force the result to be false when performing a mathematical operation on a string. Error. I tried to test if it was even or odd as a way to test if it was a fixnum. I hoped I would get a false and be able to use that as a conditional. Error. It took a while but I eventually found the appropriate method to do what I wanted all along in the Object docs- is_a? - which returns true/false if it is a type of object specified. 
+# Once I was able to isolate the nums from the strings I had to put them each in new arrays because the method needs to be nondestructive of the original array. I got some weird and unexpected results when trying collect/!, map/! or sort!. on the new array.
 #
-#
+#The hash method turned out to be right in the docs. If you call sort on a hash it creates an array with a nested subarray for each key/value pair. the bit with the k[]<=>v[] tells it it in which direction to sort and by which index value of the array. I just changed the variable to k,v to be more relevant to the challenge. Each array is only 2 items long. So you can either sort by the first index or the second index. The first[0] is the keys and the second[1] is the values. If you want the keys to determine the sort you would use [0].If you just switch it to v<=>k, it will sort by descending instead of ascending. If you put in an index higher than the last index in the array, in this case 2 or higher, it just returns the original array unsorted. I was expecting something else ecause I figured nil would get invlolved and do something weird.
 #
 
 
