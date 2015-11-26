@@ -9,8 +9,8 @@
 # # Class Warfare, Validate a Credit Card Number
 
 
-# # I worked on this challenge [by myself, with: ].
-# # I spent [#] hours on this challenge.
+# # I worked on this challenge [ with: Tom McHenry].
+# # I spent [4.5] hours on this challenge. 3, 1.5
 
 # # Pseudocode
 
@@ -25,10 +25,10 @@
 # #   6) ELSE 
 # #   7) Create an array 
 # #   8 Look through the number
-# #   9) Make each individual character in the integer a value in the array
+# #   9) Make each individual digit in the integer a separate item in the array
 # #   10) Look through each number in the number array in reverse order
 # #   11) Double every other integer
-# #   12) Make each individual character in the integer a value in the array
+# #   12) Make each digit a separate item in the array
 # #   13) Sum all the values in the array
 # #   14) IF the sum of the array is divisible by 10
 # #     15) Return True
@@ -37,30 +37,6 @@
 
 
 # Initial Solution
-
-# Don't forget to check on initialization for a card length
-# of exactly 16 digits
-
-# class CreditCard
-  
-#   def initialize (number)
-#     @number = number.to_s 
-#     raise ArgumentError unless @number.length == 16 
-#   end
-  
-#   def check_card
-#     number_array = @number.split(//)
-#     number_array.map! {|x| x.to_i }
-#   index = -2
-#     while index.abs <= number_array.length
-#       number_array[index] = number_array[index] * 2
-#       index -= 2
-#       end 
-#     new_array = number_array.join.split(//)
-#     new_array.map! {|num| num.to_i} 
-#     new_array.reduce(:+) % 10 == 0
-#   end
-# end
 
 # class CreditCard
   
@@ -86,23 +62,6 @@
 # visa = CreditCard.new(4563960122001999)
 # p visa.check_card
 
-
-#test = [4, 4, 0, 8, 0, 4, 1, 2, 3, 4, 5, 6, 7, 9, 0, 6]
-
- #   temp_array = number_array.each_index {|x| number_array[x] * 2 if x % 2 == 0 }
-  #  temp_array
-
-
-#new = test.each_with_index {|x| test[x] * 2 }
-#p new
-  #if x % 2 == 0 }
-#card = CreditCard.new(4408041234567901)
-#p card.check_card
-
-
-
-# Refactored Solution v. 1 abandoning the while loop and using each_with_index
-
 =begin
 ideas for refactor
 1 -chunk by even index
@@ -113,6 +72,8 @@ ideas for refactor
 	reduce
 ----
 =end
+
+# Refactored Solution v. 1 abandoning the while loop and using each_with_index
 
 # class CreditCard
   
