@@ -45,7 +45,7 @@ What is a writer method?
 What do the attr methods do for you?
 	-They are shortcuts to defining methods that have read/write functionality. 
 Should you always use an accessor to cover your bases? Why or why not?
-	-Absolutely not. It would likely lead to inadvertantly overwriting data in unexpected places and ruin programs.
+	-Absolutely not. It would likely lead to inadvertently overwriting data in unexpected places and ruin programs.
 What is confusing to you about these methods?
 	-It took me a long time get this precisely. First I defined the name method to be #@name = "Steve". Then I changed it to # def initialize because the release said "initialize a name. At first I tried using interpolation for ##{@name} in the salutation string. Until I tried to copy the syntax from the example more closely and I saw that I needed to call the name method. 
 	-Before I read TWGR I thought attr methods connect to methods defined in other classes. Not shortcuts to creation of those methods within a class. 
