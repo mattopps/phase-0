@@ -108,12 +108,12 @@ class BingoBoard
     
     @column = letter_hash[@letter]
     
-    @bingo_board.each {|x| x[@column] = "X" if x[@column] == @number}
+    @bingo_board.each {|row| row[@column] = "X" if row[@column] == @number}
     @bingo_board.each {|x| p x}
   end
 
   def print_column
-    @bingo_board.each {|x| p x[@column]}
+    @bingo_board.each {|row| p row[@column]}
   end
 end
 
