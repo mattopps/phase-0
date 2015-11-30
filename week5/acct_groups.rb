@@ -40,17 +40,21 @@ psuedocode.
 #Randomize - If you want to randomize the list every time you run the program - create a new array equal 
 # to a random version of the list array, random = list.sample(list.length) and run the method with random as an argument
 
-
-class = ['Jack Abernethy', 'Mohammad Amin', 'Zollie Barnes', 'Reuben Brandt', 'Dana Breen', 'Breton Burnett', 'Saundra Vanessa Castaneda', 'Luis De Castro', 'Nicolette Chambers', 'Kerry Choy', 'Nick Davies', 'KB DiAngelo', 'Adrian Diaz', 'David Diaz', 'Bob Dorff', 'Michael Du', 'Paul Dynowski', 'Jenna Espezua', 'Sean Fleming', 'Marcel Haesok', 'Albert Hahn', 'Arthur Head', 'Jonathan Huang', 'Thomas Huang', 'Alex Jamar', 'Kevin Jones', 'Steven Jones', 'Coleby Kent', 'Caroline Kenworthy', 'Calvin Lang', 'Yi Lu', 'David Ma', 'Sean Massih', 'Tom McHenry', 'Alex Mitzman', 'Lydia Nash', 'Brenda Nguyen', 'Matthew Oppenheimer', 'Mason Pierce', 'Joe Plonsker', 'Mira Scarvalone', 'Joseph Scott', 'Chris Shahin', 'Benjamin Shpringer', 'Lindsey Stevenson', 'Phil Thomas', 'Gary Tso', 'Ting Wang', 'Monique Williamson', 'Regina Wong', 'Hanah Yendler']
+cohort = ['Jack Abernethy', 'Mohammad Amin', 'Zollie Barnes', 'Reuben Brandt', 'Dana Breen', 'Breton Burnett', 'Saundra Vanessa Castaneda', 'Luis De Castro', 'Nicolette Chambers', 'Kerry Choy', 'Nick Davies', 'KB DiAngelo', 'Adrian Diaz', 'David Diaz', 'Bob Dorff', 'Michael Du', 'Paul Dynowski', 'Jenna Espezua', 'Sean Fleming', 'Marcel Haesok', 'Albert Hahn', 'Arthur Head', 'Jonathan Huang', 'Thomas Huang', 'Alex Jamar', 'Kevin Jones', 'Steven Jones', 'Coleby Kent', 'Caroline Kenworthy', 'Calvin Lang', 'Yi Lu', 'David Ma', 'Sean Massih', 'Tom McHenry', 'Alex Mitzman', 'Lydia Nash', 'Brenda Nguyen', 'Matthew Oppenheimer', 'Mason Pierce', 'Joe Plonsker', 'Mira Scarvalone', 'Joseph Scott', 'Chris Shahin', 'Benjamin Shpringer', 'Lindsey Stevenson', 'Phil Thomas', 'Gary Tso', 'Ting Wang', 'Monique Williamson', 'Regina Wong', 'Hanah Yendler']
 
 
 
 #Refactor
 def create_groups(list, group_size)
-	acct_groups = list.each_slice(group_size) { |group| p group }
+	acct_groups = []
+	temp = list.each_slice(group_size) { |group|  acct_groups.push(group) } # During the bingo challenge, while futile-ly attempting a backward solution using flatten and then each slice to put it back together, I realized the value of my bingo board was nil. because I was just printing it in the iteration, never actually assigning anything. sooooo I realized I need to push each subarrayhere otherwise the actual value of acct_groups would be nil.
+	
+	acct_groups.each{|group| p group}
+	p acct_groups 
 end
 
-create_groups(class, 5)
+create_groups(cohort, 5)
+
 
 #Randomized - Refactor version
 #def create_groups(list, group_size)
