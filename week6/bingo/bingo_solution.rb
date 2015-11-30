@@ -108,12 +108,20 @@ class BingoBoard
     
     @column = letter_hash[@letter]
     
+<<<<<<< HEAD
+    @bingo_board.each {|x| x[@column] = "X" if x[@column] == @number}
+=======
     @bingo_board.each {|row| row[@column] = "X" if row[@column] == @number}
+>>>>>>> b744ab1338bd0d6b27c29a54be81f97f33422921
     @bingo_board.each {|x| p x}
   end
 
   def print_column
+<<<<<<< HEAD
+    @bingo_board.each {|x| p x[@column]}
+=======
     @bingo_board.each {|row| p row[@column]}
+>>>>>>> b744ab1338bd0d6b27c29a54be81f97f33422921
   end
 end
 
@@ -135,6 +143,10 @@ new_game = BingoBoard.new(board)
 new_game.call
 new_game.check
 new_game.print_column
+
+
+=======
+
 
 #Reflection
 #WOWOWOWW This was one of those challenges where I could have sworn everything was working and I couldn't understand what was going on(my second pass at it. My first time I spent three hours and got sidetracked and ran around in circles trying to determine what kind of hash to use to access the letters and columns and where to put the variables. ) I got it to the point that I could print the board, and identify which column was called. As a check I printed the number of the column corresponding to the letter in #call. and it printed right. But instead of only marking an X if the number was called it marked the entire column as X. I could not understand why at all. after a long time I changed some stuff and the I realized that I had set my conditional with an assignment operator instead of the boolean conditional. so It was resetting @number on every loop. So problem solved. Except then It didn't mark X even when the number called was in the column called. And after too much time I saw that @number was a string and needed to be unconverted(or reconverted or however you choose to look at it) to an integer. My initial construction of #call had string interpolation to display the letter and the number. In which case it might be possible that the number wouldn't need to be switched to a string.
