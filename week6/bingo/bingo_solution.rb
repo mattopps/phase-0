@@ -106,10 +106,14 @@ class BingoBoard
   def check
     letter_hash =  {"B" => 0, "I" => 1, "N" => 2, "G" => 3, "O" => 4}
     
-    column = letter_hash[@letter]
+    @column = letter_hash[@letter]
     
-    @bingo_board.each {|x| x[column] = "X" if x[column] == @number}
+    @bingo_board.each {|x| x[@column] = "X" if x[@column] == @number}
     @bingo_board.each {|x| p x}
+  end
+
+  def print_column
+    @bingo_board.each {|x| p x[@column]}
   end
 end
 
@@ -130,6 +134,7 @@ new_game = BingoBoard.new(board)
 
 new_game.call
 new_game.check
+new_game.print_column
 
 
 #Reflection
