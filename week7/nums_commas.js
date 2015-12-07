@@ -27,25 +27,28 @@
 
 // Initial Solution
 
-var commas = function(num) {
-  var testArray = num.toString().split(""); 
-     for (var i = testArray.length-3; i > 0; i -= 3) {
-    testArray.splice(i, 0, ",");
+// var commas = function(num) {
+//   var testArray = num.toString().split(""); 
+//      for (var i = testArray.length-3; i > 0; i -= 3) {
+//     testArray.splice(i, 0, ",");
 
-  }; 
-  console.log(testArray.join(""));
-}
+//   }; 
+//   console.log(testArray.join(""));
+// }
 
-commas(3039415123)
+
 
 
 // Refactored Solution
 
-
+var commas = function(num) {
+console.log(num.toLocaleString());
+}
 
 
 // Your Own Tests (OPTIONAL)
-// commas(1)
+
+commas(3039415123)// commas(1)
 // commas(-1)
 // commas(111)
 
