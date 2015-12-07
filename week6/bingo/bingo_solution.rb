@@ -97,31 +97,24 @@ class BingoBoard
   end
   
   def call
-    @letter = ['B', 'I', 'N', 'G', 'O'].sample 
+    @letter_hash =  {"B" => 0, "I" => 1, "N" => 2, "G" => 3, "O" => 4}
+    @letter = @letter_hash.keys.sample 
     @number = rand(1..100)
     #@number = 68 # This line is here to use for easy testing. Comment out the previous line and look for a specific number.
     p "#{@letter}#{@number}"
   end
 
   def check
-    letter_hash =  {"B" => 0, "I" => 1, "N" => 2, "G" => 3, "O" => 4}
-    
-    @column = letter_hash[@letter]
-    
-<<<<<<< HEAD
-    @bingo_board.each {|x| x[@column] = "X" if x[@column] == @number}
-=======
+    @column =@letter_hash[@letter]
+   # @bingo_board.each {|row| row[@column] = "X" if row[@column] == @number}
     @bingo_board.each {|row| row[@column] = "X" if row[@column] == @number}
->>>>>>> b744ab1338bd0d6b27c29a54be81f97f33422921
-    @bingo_board.each {|x| p x}
+    @bingo_board.each {|row| p row}
   end
 
   def print_column
-<<<<<<< HEAD
-    @bingo_board.each {|x| p x[@column]}
-=======
+
     @bingo_board.each {|row| p row[@column]}
->>>>>>> b744ab1338bd0d6b27c29a54be81f97f33422921
+
   end
 end
 
@@ -143,9 +136,6 @@ new_game = BingoBoard.new(board)
 new_game.call
 new_game.check
 new_game.print_column
-
-
-=======
 
 
 #Reflection
