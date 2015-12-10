@@ -203,120 +203,216 @@
 
 // play();
 // // 		    	
-// 			
-// console.log(player1.pile[0].length); // Test
-// console.log(player2.pile[0].length); // Test
-// console.log(player1.pile[0]); // Test
-// console.log(player2.pile[0]); // Test
+// // 			
 
 
-//Refactored
+// //Refactored
 
 
-function numberAtRandom(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+// function numberAtRandom(min, max) {
+//   return Math.floor(Math.random() * (max - min)) + min;
+// }
+
+// var cards = [2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14]
+
+// //for (var i = 1; cards.length > 0;}
+// var battleCards = [];
+// var warPile =[];
+// var shuffledDeck = [];
+// var player1BattleCount = 0;
+// var player2BattleCount = 0;
+// var battleCount = 0;
+// var warCount = 0;
+
+// var player1 = {pile: []};
+// var player2 = {pile: []};
+// //var victory = "" 
+
+// var shuffle = function(deck) {   
+// 	while (deck.length > 0){
+// 		shuffledDeck.push(deck.splice(numberAtRandom(0, deck.length),1));
+//   };
+//   		for (var i = 0; i < shuffledDeck.length ; i++ ) {
+// 			shuffledDeck[i] = shuffledDeck[i][0];
+// };
+// }
+// // console.log(cards.length); //Test
+// // console.log(shuffledDeck.length); //Test
+
+
+// var deal = function(){
+
+// player1.pile.push(shuffledDeck.splice(0,26));
+// player2.pile.push(shuffledDeck.splice(0,26));
+// };
+
+// var battleReport = function(){
+//  	if (player2.pile[0].length === 0)
+//   				return	console.log("player2 is defeated. player1 Wins. \n There were " + battleCount + " battles and " + warCount + " wars. \n player1 won " + player1BattleCount + " battles. player2 won " + player2BattleCount + "battles.");
+// 	if (player1.pile[0].length === 0)
+// 				return	console.log("player1 is defeated. player2 Wins. \n There were " + battleCount + " battles and " + warCount + " wars. \n player1 won " + player1BattleCount + " battles. player2 won " + player2BattleCount + "battles.");
+//    }
+
+// var nextRound = function(){
+// 		battleCards = [];
+// 		warPile = [];
+// 		battleCount += 1;
+// 		battleReport();
+// }
+
+// var battle = function(){ 
+// 	while ((player1.pile[0].length > 0) && (player2.pile[0].length > 0)){
+// 			if (battleCount > 5000 && player1.pile[0].length === 26)
+// 				break
+	  
+// 	  battleCards.push(player1.pile[0].shift(), player2.pile[0].shift());
+// 	  console.log(battleCards);
+		  	
+// 		  	if 		(battleCards[0] > battleCards[1]) {
+// 					player1.pile[0] = player1.pile[0].concat(battleCards).concat(warPile);
+// 					player1BattleCount += 1
+// 					console.log("player1 wins this round");
+// 					console.log("player1 has " + player1.pile[0].length + " in his pile");
+//   			 		nextRound();
+//  			}				
+// 			else if (battleCards[0] < battleCards[1]) {
+// 					player2.pile[0] = player2.pile[0].concat(battleCards).concat(warPile);
+// 					player2BattleCount += 1
+// 					console.log("player2 wins this round");
+// 					console.log("player2 has " + player2.pile[0].length + " in his pile");
+// 					nextRound();
+// 			}
+
+//     		else{
+//     				war();
+//     		}
+// }	
+// }
+// var war = function(){
+//  			console.log("WAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRR!!!!!!!!");
+//  			warCount += 1
+//  			warPile.push(battleCards.pop(),battleCards.pop(), player1.pile[0].shift(), player1.pile[0].shift(), player1.pile[0].shift(), player2.pile[0].shift(), player2.pile[0].shift(), player2.pile[0].shift());
+//  			console.log(warPile);
+//  			battleReport();
+//  			battle();	
+ 		
+// }
+
+
+// var play = function(){
+ 
+// shuffle(cards);
+// deal();
+// battle();
+// }
+
+// play();
+ 		    	
+
+// Refactored so that all the functions are properties of the game and not global functions.
+
 
 var cards = [2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
-//for (var i = 1; cards.length > 0;}
-var battleCards = [];
-var warPile =[];
-var shuffledDeck = [];
-var player1BattleCount = 0;
-var player2BattleCount = 0;
-var battleCount = 0;
-var warCount = 0;
+function Player(name){
+ 	this.name = name
+ }
 
-var player1 = {pile: []};
-var player2 = {pile: []};
-//var victory = "" 
+function Game(player1, player2, deck){
+ this.player1 = player1
+ this.player2 = player2
+ this.deck = deck
+}
 
-var shuffle = function(deck) {   
+var numberAtRandom = function(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+var lee = new Player("Lee" )
+var grant = new Player("Grant") 
+
+var warGame = new Game(lee, grant, cards)
+warGame.player1.pile = [];
+warGame.player2.pile = [];
+warGame.battleCards =  [];
+warGame.warPile =      [];
+warGame.shuffledDeck = [];
+warGame.player1BattleCount = 0;
+warGame.player2BattleCount = 0;
+warGame.battleCount = 0;
+warGame.warCount = 0;
+
+warGame.deal = function(){
+warGame.player1.pile.push(warGame.shuffledDeck.splice(0,26));
+warGame.player2.pile.push(warGame.shuffledDeck.splice(0,26));
+};
+warGame.shuffle = function(deck) {
 	while (deck.length > 0){
-		shuffledDeck.push(deck.splice(numberAtRandom(0, deck.length),1));
+		warGame.shuffledDeck.push(warGame.deck.splice(numberAtRandom(0, warGame.deck.length),1));
   };
-  		for (var i = 0; i < shuffledDeck.length ; i++ ) {
-			shuffledDeck[i] = shuffledDeck[i][0];
+  		for (var i = 0; i < warGame.shuffledDeck.length ; i++ ) {
+			warGame.shuffledDeck[i] = warGame.shuffledDeck[i][0];
 };
 }
-// console.log(cards.length); //Test
-// console.log(shuffledDeck.length); //Test
-
-
-var deal = function(){
-
-player1.pile.push(shuffledDeck.splice(0,26));
-player2.pile.push(shuffledDeck.splice(0,26));
-};
-
-var battleReport = function(){
- 	if (player2.pile[0].length === 0)
-  				return	console.log("player2 is defeated. player1 Wins. \n There were " + battleCount + " battles and " + warCount + " wars. \n player1 won " + player1BattleCount + " battles. player2 won " + player2BattleCount + "battles.");
-	if (player1.pile[0].length === 0)
-				return	console.log("player1 is defeated. player2 Wins. \n There were " + battleCount + " battles and " + warCount + " wars. \n player1 won " + player1BattleCount + " battles. player2 won " + player2BattleCount + "battles.");
+warGame.battleReport = function(){
+ 	if (warGame.player2.pile[0].length === 0)
+  				return	console.log("player2 is defeated. player1 Wins. \n There were " + warGame.battleCount + "battles and " + warGame.warCount + "wars. \n player1 won " + warGame.player1BattleCount + " battles. player2 won " + warGame.player2BattleCount + "battles.");
+	if (warGame.player1.pile[0].length === 0)
+				return	console.log("player1 is defeated. player2 Wins. \n There were " + warGame.battleCount + "battles and " + warGame.warCount + "wars. \n player1 won " + warGame.player1BattleCount + " battles. player2 won " + warGame.player2BattleCount + "battles.");
    }
 
-var nextRound = function(){
-		battleCards = [];
-		warPile = [];
-		battleCount += 1;
-		battleReport();
-}
-
-var battle = function(){ 
-	while ((player1.pile[0].length > 0) && (player2.pile[0].length > 0)){
-			if (battleCount > 5000 && player1.pile[0].length === 26)
+warGame.battle = function(){ 
+	while ((warGame.player1.pile[0].length > 0) && (warGame.player2.pile[0].length > 0)){
+			if (warGame.battleCount > 5000 && warGame.player1.pile[0].length === 26)
 				break
-	  
-	  battleCards.push(player1.pile[0].shift(), player2.pile[0].shift());
-	  console.log(battleCards);
-		  	
-		  	if 		(battleCards[0] > battleCards[1]) {
-					player1.pile[0] = player1.pile[0].concat(battleCards).concat(warPile);
-					player1BattleCount += 1
-					console.log("player1 wins this round");
-					console.log("player1 has " + player1.pile[0].length + " in his pile");
-  			 		nextRound();
- 			}				
-			else if (battleCards[0] < battleCards[1]) {
-					player2.pile[0] = player2.pile[0].concat(battleCards).concat(warPile);
-					player2BattleCount += 1
-					console.log("player2 wins this round");
-					console.log("player2 has " + player2.pile[0].length + " in his pile");
-					nextRound();
-			}
+	warGame.battleCards.push(warGame.player1.pile[0].shift(), warGame.player2.pile[0].shift());
+	console.log(warGame.battleCards);
+  if (warGame.battleCards[0] > warGame.battleCards[1]) {
+		warGame.player1.pile[0] = warGame.player1.pile[0].concat(warGame.battleCards).concat(warGame.warPile);
+		warGame.battleCards = []
+		warGame.warPile = []
+		console.log("player1 wins this round");
+		warGame.player1BattleCount += 1
+		warGame.battleCount += 1
+		console.log("player1 has " + warGame.player1.pile[0].length + " in his pile");
+		warGame.battleReport();
+  			 
+ }				
+else if (warGame.battleCards[0] < warGame.battleCards[1]) {
+		warGame.player2.pile[0] = warGame.player2.pile[0].concat(warGame.battleCards).concat(warGame.warPile);
+		warGame.battleCards = []
+		warGame.warPile = []
+		warGame.player2BattleCount += 1
+		warGame.battleCount += 1
+		console.log("player2 wins this round");
+		console.log("player2 has " + warGame.player2.pile[0].length + " in his pile");
+		warGame.battleReport();
+	}
 
-    		else{
-    				war();
-    		}
+    else{
+    		warGame.war();
+    }
 }	
 }
-var war = function(){
- 			console.log("WAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRR!!!!!!!!");
- 			warCount += 1
- 			warPile.push(battleCards.pop(),battleCards.pop(), player1.pile[0].shift(), player1.pile[0].shift(), player1.pile[0].shift(), player2.pile[0].shift(), player2.pile[0].shift(), player2.pile[0].shift());
- 			console.log(warPile);
- 			battleReport();
- 			battle();	
+warGame.war = function(){
+ 			console.log("WAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRR!!!!!!!!");
+ 			warGame.warCount += 1
+ 			warGame.warPile.push(warGame.battleCards.pop(),warGame.battleCards.pop(), warGame.player1.pile[0].shift(), warGame.player1.pile[0].shift(), warGame.player1.pile[0].shift(), warGame.player2.pile[0].shift(), warGame.player2.pile[0].shift(), warGame.player2.pile[0].shift());
+ 			console.log(warGame.warPile);
+ 			warGame.battleReport();
+ 			warGame.battle();	
  		
 }
-
-
-var play = function(){
+warGame.play = function(){
  
-shuffle(cards);
-deal();
-battle();
+warGame.shuffle(cards);
+warGame.deal();
+warGame.battle();
 }
 
-play();
-// 		    	
-// 			
-// console.log(player1.pile[0].length); // Test
-// console.log(player2.pile[0].length); // Test
-// console.log(player1.pile[0]); // Test
-// console.log(player2.pile[0]); // Test
+
+warGame.play();
+
 
 
 
