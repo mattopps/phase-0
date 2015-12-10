@@ -80,10 +80,17 @@ var average = function(array){
 // __________________________________________
 // Reflect
 
-
-
-
-
+What did you learn about adding functions to objects?
+  -I learned that it is exactly as easy as adding any other property to an object. If using object literal creation it is just like any other property with the name of the function added with a semicolon and the word function to specify it as a function any arguments, and then a code block. If added to an existing object it is again just like any other propert being added. its nameOfObject.something = function(){} or nameOfObject['something'] = function(){} 
+  -I am still trying to experiment with when it makes sense for a function to be specifically defined inside an object and not outside. 
+  
+How did you iterate over nested arrays in JavaScript?
+  -We didn't need to do that in this challenge. you could use a nested for(var - in -) loop. eg 
+              for (var i in scores){
+                   for (var a in scores){
+                       console.log(scores[i][a] += 50);}}
+Were there any new methods you were able to incorporate? If so, what were they and how did they work?
+  -reduce. much more complicated than in Ruby. requires the anonymous function qualifier, which threw me a bit. I didn't realize you literally type the word 'function'I thought you put an actual function where it says function.
 
 
 
