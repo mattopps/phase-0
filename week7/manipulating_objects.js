@@ -17,7 +17,7 @@ var terah = {
 var adam = {name: "Adam",}
 terah.weight = 125
 terah.spouse = adam
-terah.eyeColor = undefined
+delete terah.eyeColor 
 adam.spouse = terah
 terah.children = {}
 terah.children.carson = {name: "Carson"}
@@ -59,7 +59,7 @@ function assert(test, message, test_number) {
   return true;
 }
 
-assert(I 
+assert(
   (adam instanceof Object),
   "The value of adam should be an Object.",
   "1. "
