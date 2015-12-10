@@ -21,7 +21,8 @@ Release 5
 10 - SELECT regions.region_name, states.state_name FROM regions Join states ON regions.id = states.region_id ORDER BY region_id ASC ;
 
 
-<!-- 
+Reflection 
+
 What are databases for?
 	-Storing information.
 What is a one-to-many relationship?
@@ -31,4 +32,4 @@ What is a primary key? What is a foreign key? How can you determine which is whi
 How can you select information out of a SQL database? 
 	- SELECT FROM table ... in many many combos of ways
 What are some general guidelines for that?
-	- capital letters for the commands/clauses lowercase for the sources.-->
+	- capital letters for the commands/clauses lowercase for the sources.
