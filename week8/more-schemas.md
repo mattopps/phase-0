@@ -1,12 +1,12 @@
 
 
-![regions and state](regions_states.png "Regions and States")
+![regions and state](imgs/regions_states.png "Regions and States")
 
-![fashion](clueless.png "Cher From Clueless List")
+![fashion](imgs/clueless.png "Cher From Clueless List")
 
-![grocery lists](groceries.png "Costco and Trader Joe's")
+![grocery lists](imgs/groceries.png "Costco and Trader Joe's")
 
-![password](potus_one_to_one.png "Launchcodes")
+![password](imgs/potus_one_to_one.png "Launchcodes")
 
 
 
