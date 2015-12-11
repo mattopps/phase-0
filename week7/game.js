@@ -398,6 +398,12 @@ warGame.war = function(){
  			console.log("WAAAAAAAAAA\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n\nAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRR!!!!!!!!");
  			warGame.warCount += 1
  			warGame.warPile.push(warGame.battleCards.pop(),warGame.battleCards.pop(), warGame.player1.pile[0].shift(), warGame.player1.pile[0].shift(), warGame.player1.pile[0].shift(), warGame.player2.pile[0].shift(), warGame.player2.pile[0].shift(), warGame.player2.pile[0].shift());
+
+ 			//The two lines below would seem to me to be the same as the line above. but they break the program. same goes for slice(0,3) which doesn't remove any eements and instead reutrns the whole source array.
+ 			//warGame.warPile.push(warGame.battleCards.pop(2),warGame.player1.pile[0].shift(3), warGame.player2.pile[0].shift(3));
+ 		    //warGame.warPile = warGame.battleCards.pop(2) + warGame.player1.pile[0].shift(3) + warGame.player2.pile[0].shift(3);
+
+
  			console.log(warGame.warPile);
  			warGame.battleReport();
  			warGame.battle();	
