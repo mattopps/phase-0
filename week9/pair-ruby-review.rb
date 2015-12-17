@@ -118,12 +118,12 @@ class Drawer
     @contents << item
   end
 
-  def remove_item(item = @contents.pop) #what is `#pop` doing?
+  def remove_item(item = @contents.pop) #what is `#pop` doing? by default it removes the last item in the array
     @contents.delete(item)
   end
 
   def dump 
-    @contents = []# what should this method return?
+    @contents = []# what should this method return? an empty drawer. I almost created a loop to delete each item and then my pair said, we could just set it to empty. WOW!. Thanks
     puts "Your drawer is empty."
   end
 
@@ -133,10 +133,10 @@ class Drawer
   end
 end
 
-class Silverware < Drawer
+class Silverware 
   attr_reader :type, :clean
 
-  # Are there any more methods needed in this class?
+  # Are there any more methods needed in this class? Yes, A clean_silverware method and a clean reader method.
 
   def initialize(type, clean = true)
     @type = type
@@ -205,3 +205,10 @@ end
 
 
 # # Reflection
+
+# What concepts did you review in this challenge?
+# 	- We reviewed reading errors and fixing code, creating new instances 
+# What is still confusing to you about Ruby?
+# 	- Much. I wasn't sure if we needed to have silverware inherit anything from Drawers. And after the very different way to create new objects in JS the whole thing got really muddled for me.
+# What are you going to study to get more prepared for Phase 1? 
+# 	- I hope a lot.
